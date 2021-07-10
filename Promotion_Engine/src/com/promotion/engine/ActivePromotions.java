@@ -3,8 +3,8 @@ package com.promotion.engine;
 public class ActivePromotions {
 
 	private String name;
-	private int quantity;
-	private int price;
+	private Integer quantity;
+	private Double price;
 	
 	public String getName() {
 		return name;
@@ -12,16 +12,16 @@ public class ActivePromotions {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-	public int getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}	
 	

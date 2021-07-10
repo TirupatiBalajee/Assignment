@@ -3,7 +3,7 @@ package com.promotion.engine;
 public class Invertory {
 	
 	private String name;
-	private long price;
+	private Double price;
 	
 	public String getName() {
 		return name;
@@ -11,10 +11,10 @@ public class Invertory {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	

@@ -11,22 +11,25 @@ public class Engine {
 		
 		Invertory invA = new Invertory();
 		invA.setName("A");
-		invA.setPrice(10);
+		invA.setPrice((double) 50);
 		
 		Invertory invB = new Invertory();
 		invB.setName("B");
-		invB.setPrice(5);
+		invB.setPrice((double) 30);
 		
 		Invertory invC = new Invertory();
 		invC.setName("C");
-		invC.setPrice(5);
+		invC.setPrice((double) 20);
 		
 		Invertory invD = new Invertory();
 		invD.setName("D");
-		invD.setPrice(5);
+		invD.setPrice((double) 15);		
 		
+	}
+	
+	//Method to calculate the TotalCost of the Cart
+	public double getTotalCostWithPromotion(ActivePromotions activePromotions, Cart cart) {
 		
-		
-		
+		return 0.0;
 	}
 }
