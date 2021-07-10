@@ -1,28 +1,25 @@
 package com.promotion.engine;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class ActivePromotions {
 
-	private String name;
-	private Integer quantity;
-	private Double price;
 	
-	public String getName() {
-		return name;
+	public ActivePromotions(Map<ArrayList<String>, Double> promotionMap) {
+		super();
+		this.promotionMap = promotionMap;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	private Map<ArrayList<String>, Double> promotionMap = new HashMap<ArrayList<String>, Double>();
+
+	public Map<ArrayList<String>, Double> getPromotionMap() {
+		return promotionMap;
 	}
-	public Integer getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-	public Double getPrice() {
-		return price;
-	}
-	public void setPrice(Double price) {
-		this.price = price;
+
+	public void setPromotionMap(Map<ArrayList<String>, Double> promotionMap) {
+		this.promotionMap = promotionMap;
 	}	
 	
 }

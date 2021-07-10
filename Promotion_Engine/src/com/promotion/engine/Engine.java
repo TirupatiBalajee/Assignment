@@ -2,6 +2,7 @@ package com.promotion.engine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Engine {
 
@@ -28,7 +29,16 @@ public class Engine {
 	}
 	
 	//Method to calculate the TotalCost of the Cart
-	public double getTotalCostWithPromotion(ActivePromotions activePromotions, Cart cart) {
+	public double getTotalCostWithPromotion(Map<ArrayList<String>, Double> promotionMap, Map<Invertory,Integer> orderDetails) {
+		
+		/* psudo logic implementation*/
+		
+		// iterate over OrderDetails object to get the list of Item and Quantity
+		for(Map.Entry<Invertory, Integer> set : orderDetails.entrySet()) {
+			if(promotionMap.containsKey(set.getKey().getName())) {
+				//If the item is present do your logic 
+			}
+		}
 		
 		return 0.0;
 	}

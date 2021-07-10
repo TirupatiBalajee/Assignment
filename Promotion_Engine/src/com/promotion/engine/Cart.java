@@ -1,17 +1,17 @@
 package com.promotion.engine;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Cart {
 	
-	private List<Invertory> orderDetails = new ArrayList<Invertory>();
+	private Map<Invertory,Integer> orderDetails = new HashMap<Invertory,Integer>();
 
-	public List<Invertory> getOrderDetails() {
+	public Map<Invertory,Integer> getOrderDetails() {
 		return orderDetails;
 	}
 
-	public void setOrderDetails(List<Invertory> orderDetails) {
+	public void setOrderDetails(Map<Invertory,Integer> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
 }
