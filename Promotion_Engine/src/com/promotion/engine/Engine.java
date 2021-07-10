@@ -29,17 +29,41 @@ public class Engine {
 	}
 	
 	//Method to calculate the TotalCost of the Cart
-	public double getTotalCostWithPromotion(Map<ArrayList<String>, Double> promotionMap, Map<Invertory,Integer> orderDetails) {
+	public Double getTotalCostWithPromotion(Map<ArrayList<String>, Integer> promotionMapQuantity,Map<ArrayList<String>, Double> promotionMapCost, Map<Invertory,Integer> orderDetails, Map<Invertory,Double> inventoryPrice) {
 		
 		/* psudo logic implementation*/
+		Double totalPrice = 0.0;
+		Double inventoryCost = 0.0;
+		int numberOfPromotion = 0;
+		int reminderOfPromotion = 0;
 		
 		// iterate over OrderDetails object to get the list of Item and Quantity
 		for(Map.Entry<Invertory, Integer> set : orderDetails.entrySet()) {
-			if(promotionMap.containsKey(set.getKey().getName())) {
+			
+			inventoryCost = 0.0;
+			numberOfPromotion = 0;
+			reminderOfPromotion = 0;
+			String item = set.getKey().getName();
+			
+			if(promotionMapQuantity.containsKey(item)) {
+				
 				//If the item is present do your logic 
+				Integer promotionQuatity = promotionMapQuantity.get(item);
+				Integer orderQuantity = set.getValue();
+				inventoryCost = inventoryPrice.get(item);
+				if(orderQuantity < promotionQuatity) {
+					totalPrice = totalPrice + orderQuantity*inventoryCost;
+				}
+				else {
+					numberOfPromotion = orderQuantity/promotionQuatity;
+					reminderOfPromotion = orderQuantity % promotionQuatity;
+					
+					totalPrice = totalPrice + numberOfPromotion * promotionMapCost.get(item);
+					totalPrice = totalPrice + reminderOfPromotion * inventoryCost;
+				}
 			}
 		}
 		
-		return 0.0;
+		return totalPrice;
 	}
 }
